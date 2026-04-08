@@ -1,0 +1,86 @@
+# Ignore node_modules folder
+/node_modules
+
+# Ignore virtualenv folder
+/.venv
+
+# Ignore IDE files
+/.idea
+*.iml
+*.ipynb_checkpoints
+
+# Ignore pycharm files
+/.pycharm
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore log files
+*.log
+
+# Ignore database files
+*.db
+
+# Ignore OS files
+Thumbs.db
+.DS_Store
+.DS_Store?
+
+# Ignore user files
+.env
+.env.example
+.env.local
+.env.prod
+.env.test
+.env.development
+.env.staging
+.local
+.settings.local.py
+
+# Ignore coverage files
+coverage.xml
+.htmlcov/
+.tox/
+.nox/
+.eggs/
+.cache/
+nosetests.xml
+coverage
+
+# Ignore build files
+build/
+dist/
+*.egg-info/
+*.whl
+*.tar.gz
+*.zip
+*.exe
+*.msi
+*.rpm
+*.deb
+
+# Ignore pip files
+Pipfile
+Pipfile.lock
+
+# Ignore venv files
+*.env
+.env.bak
+.venv.bak
+
+# Ignore test files
+*.test
+__pycache__/
+*.pyc
+
+# Ignore docker files
+docker-compose.override.yml
+docker-compose.prod.yml
+docker-compose.staging.yml
+docker-compose.test.yml
+docker-compose.development.yml
+.env.docker
+.env.docker.prod
+.env.docker.staging
+.env.docker.test
+.env.docker.development
