@@ -1,17 +1,18 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install uv
+RUN pip install uv
+
+COPY pyproject.toml requirements.txt .env.example ./
+RUN uv pip install --system --no-cache -r requirements.txt
 
 COPY . .
-
-RUN mkdir -p tasks && touch tasks/__init__.py
 
 EXPOSE 7860
 
 ENV PORT=7860
 ENV PYTHONUNBUFFERED=1
 
-CMD ["python", "environment.py"]
+CMD ["uvicorn", "environment:app", "--host", "0.0.0.0", "--port", "7860"]

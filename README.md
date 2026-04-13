@@ -149,6 +149,49 @@ Arshad Mahalkari
 Computer Science Engineering Student
 AI | ML | Systems | Open Source
 
+## 🚀 MetaHackathon Round 1 - OpenEnv Compliance
+
+This project is fully compatible with OpenEnv framework and MetaHackathon requirements:
+
+### Prerequisites
+```
+pip install uv
+pip install huggingface_hub[cli]
+huggingface-cli login
+```
+
+### Quickstart (OpenEnv Standard)
+```
+git clone https://github.com/ArshadMahalkari/prompt-injection-detector
+cd prompt-injection-detector
+uv sync  # or pip install -r requirements.txt
+```
+
+### Local Testing
+```
+uv run python environment.py
+# or
+uv run uvicorn environment:app --host 0.0.0.0 --port 7860 --reload
+```
+
+Test API:
+```
+curl -X POST http://localhost:7860/reset
+curl -X POST http://localhost:7860/step -H "Content-Type: application/json"
+```
+
+### Deploy to HF Spaces
+1. `openenv push --repo-id ArshadMahalkari/prompt-injection-detector`
+2. Create HF Space from repo (Gradio app.py auto-deploys)
+
+### Docker
+```
+docker build -t prompt-injection-detector .
+docker run -p 7860:7860 prompt-injection-detector
+```
+
+**Evaluation Ready:** Deterministic graders, 4 tasks (easy-hard), dense rewards [0,1], no LLM grading.
+
 ⭐ Final Note
 
 This project demonstrates how AI systems can move from static defense → adaptive security, making LLM deployments safer and more robust against evolving threats.
