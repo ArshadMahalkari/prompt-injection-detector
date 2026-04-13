@@ -1,0 +1,35 @@
+[project]
+name = "prompt-injection-detector"
+version = "1.0.0"
+description = "OpenEnv environment for training AI agents to detect prompt injection attacks"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Arshad Mahalkari", email = "arshad@example.com"}]
+dependencies = [
+  "fastapi>=0.110.0",
+  "gradio==4.36.1",
+  "huggingface_hub==0.23.0",
+  "uvicorn>=0.29.0",
+  "pydantic>=2.6.0",
+  "openai>=1.30.0",
+  "openenv-core",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.optional-dependencies]
+cli = [
+  "huggingface_hub[cli]",
+]
+
+[project.scripts]
+server = "environment:main"
+
+[tool.uv]
+dev-dependencies = [
+  "ruff",
+  "black",
+]
